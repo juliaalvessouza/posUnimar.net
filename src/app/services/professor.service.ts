@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CursoService {
+export class ProfessorService {
   private readonly urlBase = 'https://localhost:4200';
 
   constructor(private http: HttpClient) { }
@@ -18,12 +18,12 @@ export class CursoService {
     return this.http.get<any>(`${this.urlBase}/obter/${id}`);
   }  
 
-  adicionar(curso: any) : Observable<any> {
-    return this.http.post<any>(`${this.urlBase}/adicionar`, curso);
+  adicionar(professor: any) : Observable<any> {
+    return this.http.post<any>(`${this.urlBase}/adicionar`, professor);
   }
 
-  atualizar(curso: any) : Observable<any> {
-    return this.http.put<any>(`${this.urlBase}/atualizar`, curso);
+  atualizar(professor: any) : Observable<any> {
+    return this.http.put<any>(`${this.urlBase}/atualizar`, professor);
   }  
 
   remover(id: any) : Observable<any> {
